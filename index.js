@@ -1,6 +1,7 @@
-import express from "express";
-import cors from "cors";
-import { downloadVideo } from "tiktok-api-downloader";
+const express = require("express");
+const cors = require("cors");
+const { downloadVideo } = require("tiktok-api-downloader");
+
 const app = express();
 const PORT = process.env.PORT || 4000;
 
@@ -9,8 +10,7 @@ app.use(cors());
 app.get("/", (req, res) => {
   return res.status(200).json({
     status: true,
-    error:
-      "GET /download This endpoint retrieves download URLs for a TikTok video.",
+    error: "GET /download This endpoint retrieves download URLs for a TikTok video.",
   });
 });
 
